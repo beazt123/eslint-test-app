@@ -6,7 +6,7 @@ on:
     branches:    
       - main
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -14,3 +14,15 @@ jobs:
       run: npm install
     - name: Run ESLint
       run: npx eslint **/*.js --fix
+
+  lintFix:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: npm install
+    - name: Use current action
+      uses: getsentry/action-eslint-fix@v1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
