@@ -13,9 +13,9 @@ jobs:
   lintFix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use current action
-        uses: getsentry/action-eslint-fix@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          dry: true
+    - uses: actions/checkout@v2
+    - name: Use current action
+      uses: getsentry/action-eslint-fix@v1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        dry: true
