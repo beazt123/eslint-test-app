@@ -20,6 +20,6 @@
     ],
     "rules": {
         "require-jsdoc": "off",
-        "eol-last": "warn"
+        "eol-last": "always"
     }
 }
