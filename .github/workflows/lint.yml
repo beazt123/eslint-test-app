@@ -9,14 +9,14 @@ jobs:
     - name: Install modules
       run: npm install
     - name: Run ESLint
-      run: npx eslint **/*.js --fix
-  lintFix:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: npm install
-    - name: Use current action
-      uses: getsentry/action-eslint-fix@v1
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npx eslint --ext .js,.vue,.ts "src/**" --fix
+#   lintFix:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Install modules
+#       run: npm install
+#     - name: Use current action
+#       uses: getsentry/action-eslint-fix@v1
+#       with:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
